@@ -31,14 +31,6 @@
     .map((item) => `<option value="${item.code}">${item.label}</option>`)
     .join("");
 
-  function inferCountry() {
-    const lang = (navigator.language || "en-US").toUpperCase();
-    const parts = lang.split("-");
-    const region = parts.length > 1 ? parts[1] : "";
-    const found = countries.find((item) => item.code === region);
-    return found ? found.code : "US";
-  }
-
   function toSiteLang(countryCode) {
     return countryCode === "KR" ? "ko" : "en";
   }
@@ -83,7 +75,7 @@
   const savedCountry = localStorage.getItem("siteCountry");
   const initialCountry = countries.some((item) => item.code === savedCountry)
     ? savedCountry
-    : inferCountry();
+    : "KR";
 
   select.value = initialCountry;
   applyCountry(initialCountry);
