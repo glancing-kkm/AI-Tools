@@ -23,6 +23,18 @@ body {
   font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
 }
 
+body {
+  top: 0 !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+#google_translate_element {
+  display: none !important;
+}
+
 .page {
   width: min(1220px, 92vw);
   margin: 28px auto 64px;
