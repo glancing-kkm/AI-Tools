@@ -12,6 +12,92 @@ const state = {
   sortBy: "default"
 };
 
+const uiText = {
+  ko: {
+    all: "전체",
+    searchPlaceholder: "🔎 AI 이름/기능 검색",
+    sortDefault: "기본 정렬",
+    sortFreeFirst: "무료 우선",
+    sortPriceAsc: "가격 낮은 순",
+    sortPaidSubs: "유료구독자 많은 순",
+    labelReason: "💡 이유",
+    labelFeatures: "⚙️ 기능",
+    labelPrice: "💰 가격",
+    labelPaid: "👥 유료지표",
+    labelFreeHow: "🆓 방법",
+    labelFreeScope: "📦 범위",
+    btnVisit: "🔗 사이트 이동",
+    noResults: "검색 결과가 없습니다. 다른 키워드를 입력해 주세요.",
+    note: "🟡 기준일 2026-03-05. 가격/무료 정책은 수시 변경되므로 결제 전 공식 링크에서 재확인하세요.",
+    scoreUnknown: "데이터 없음",
+    scoreVeryHigh: "매우 높음",
+    scoreHigh: "높음",
+    scoreMid: "중간",
+    scoreLow: "낮음",
+    popularTitle: "🔥 많이 쓰는 AI 조합",
+    recommendedTitle: "🎯 추천 AI 조합",
+    categoryTitle: "🗂️ 카테고리",
+    toolsTitle: "✨ 추천 AI"
+  },
+  en: {
+    all: "All",
+    searchPlaceholder: "🔎 Search AI name/features",
+    sortDefault: "Default",
+    sortFreeFirst: "Free first",
+    sortPriceAsc: "Lowest price",
+    sortPaidSubs: "Most paid subscribers",
+    labelReason: "💡 Why",
+    labelFeatures: "⚙️ Features",
+    labelPrice: "💰 Pricing",
+    labelPaid: "👥 Paid signal",
+    labelFreeHow: "🆓 How to use free",
+    labelFreeScope: "📦 Free limits",
+    btnVisit: "🔗 Visit site",
+    noResults: "No results found. Try another keyword.",
+    note: "🟡 Updated: 2026-03-05. Pricing/free limits may change; always verify on official pages.",
+    scoreUnknown: "No data",
+    scoreVeryHigh: "Very high",
+    scoreHigh: "High",
+    scoreMid: "Medium",
+    scoreLow: "Low",
+    popularTitle: "🔥 Most-used AI stacks",
+    recommendedTitle: "🎯 Recommended AI stacks",
+    categoryTitle: "🗂️ Categories",
+    toolsTitle: "✨ Recommended AI"
+  }
+};
+
+const categoryText = {
+  "💬 대화형 AI": "💬 Conversational AI",
+  "🔎 지식검색/사실검증": "🔎 Search/Fact-check",
+  "🖼️ 이미지생성": "🖼️ Image Generation",
+  "🎵 음악생성/사운드생성": "🎵 Music/Sound Generation",
+  "🎙️ 음성/보컬": "🎙️ Voice/Vocal",
+  "💻 코딩/개발": "💻 Coding/Development",
+  "📊 데이터분석/자동화": "📊 Data/Automation",
+  "🎬 비디오생성/편집": "🎬 Video Generation/Editing",
+  "📝 문서작성/편집": "📝 Writing/Editing",
+  "🧩 추가: 프레젠테이션/디자인": "🧩 Extra: Presentation/Design",
+  "🗣️ 추가: 회의록/전사": "🗣️ Extra: Meeting Notes/Transcription",
+  "🌐 추가: 번역/다국어": "🌐 Extra: Translation/Multilingual"
+};
+
+const popularCombosEn = [
+  { name: "ChatGPT + Perplexity + Notion AI", why: "Use one flow for drafting, fact-checking, and organizing docs." },
+  { name: "Gemini + Perplexity + DeepL", why: "Combine search quality, source checks, and translation." },
+  { name: "GitHub Copilot + ChatGPT + Cursor", why: "Split code completion, debugging, and codebase Q&A." },
+  { name: "Midjourney + Runway + ElevenLabs", why: "Connect image, video, and voice for faster content production." },
+  { name: "Suno + Canva AI + Runway", why: "Produce music, thumbnails, and short videos quickly." }
+];
+
+const recommendedCombosEn = [
+  { name: "Beginner: ChatGPT + Canva AI + DeepL", why: "Easy combo for planning, design, and translation." },
+  { name: "Student/Research: Gemini + Consensus + Notion AI", why: "Efficient for search, evidence checks, and note organization." },
+  { name: "Solo marketer: Perplexity + Notion AI + Runway", why: "Covers research, content planning, and video production." },
+  { name: "Developer: GitHub Copilot + Claude + Zapier", why: "Balanced setup for coding, docs, and automation." },
+  { name: "Meeting-heavy team: Otter + Fireflies + Notion AI", why: "Strong setup for capture, summary, and action tracking." }
+];
+
 const paidSignals = {
   ChatGPT: { score: 100, label: "매우 높음" },
   Gemini: { score: 97, label: "매우 높음" },
@@ -95,6 +181,29 @@ function faviconUrl(domain) {
   return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
 }
 
+function getLang() {
+  return window.__siteLang === "ko" ? "ko" : "en";
+}
+
+function t(key) {
+  return uiText[getLang()][key];
+}
+
+function scoreLabel(rawLabel) {
+  if (getLang() === "ko") return rawLabel;
+  if (rawLabel === "매우 높음") return t("scoreVeryHigh");
+  if (rawLabel === "높음") return t("scoreHigh");
+  if (rawLabel === "중간") return t("scoreMid");
+  if (rawLabel === "낮음") return t("scoreLow");
+  return t("scoreUnknown");
+}
+
+function categoryLabel(value) {
+  if (value === "전체") return t("all");
+  if (getLang() === "ko") return value;
+  return categoryText[value] || value;
+}
+
 function categories() {
   return ["전체", ...new Set(state.tools.map((tool) => tool.category))];
 }
@@ -147,7 +256,7 @@ function renderChips() {
     .map(
       (category) => `
       <button class="chip ${state.selectedCategory === category ? "active" : ""}" data-category="${category}">
-        ${category}
+        ${categoryLabel(category)}
       </button>
     `
     )
@@ -167,24 +276,26 @@ function oneLine(text) {
 
 function cardTemplate(tool) {
   const featureLine = oneLine(tool.features.join(" · "));
-  const paidSignal = (paidSignals[tool.name] && paidSignals[tool.name].label) || "데이터 없음";
+  const paidSignalRaw = (paidSignals[tool.name] && paidSignals[tool.name].label) || t("scoreUnknown");
+  const paidSignal = scoreLabel(paidSignalRaw);
+  const tagLabel = categoryLabel(tool.category);
   return `
     <article class="card">
       <div class="head">
         <img class="logo" src="${faviconUrl(tool.domain)}" alt="${tool.name} favicon" loading="lazy" />
         <div class="name-wrap">
           <h3 title="${tool.name}">${tool.name}</h3>
-          <span class="tag" title="${tool.category}">${tool.category}</span>
+          <span class="tag" title="${tagLabel}">${tagLabel}</span>
         </div>
       </div>
-      <p class="meta-row" title="${tool.reason}"><b>💡 이유</b> ${oneLine(tool.reason)}</p>
-      <p class="meta-row" title="${featureLine}"><b>⚙️ 기능</b> ${featureLine}</p>
-      <p class="meta-row" title="${tool.pricing.display}"><b>💰 가격</b> ${oneLine(tool.pricing.display)}</p>
-      <p class="meta-row" title="${paidSignal}"><b>👥 유료지표</b> ${paidSignal}</p>
-      <p class="meta-row" title="${tool.freeHow}"><b>🆓 방법</b> ${oneLine(tool.freeHow)}</p>
-      <p class="meta-row" title="${tool.freeScope}"><b>📦 범위</b> ${oneLine(tool.freeScope)}</p>
+      <p class="meta-row" title="${tool.reason}"><b>${t("labelReason")}</b> ${oneLine(tool.reason)}</p>
+      <p class="meta-row" title="${featureLine}"><b>${t("labelFeatures")}</b> ${featureLine}</p>
+      <p class="meta-row" title="${tool.pricing.display}"><b>${t("labelPrice")}</b> ${oneLine(tool.pricing.display)}</p>
+      <p class="meta-row" title="${paidSignal}"><b>${t("labelPaid")}</b> ${paidSignal}</p>
+      <p class="meta-row" title="${tool.freeHow}"><b>${t("labelFreeHow")}</b> ${oneLine(tool.freeHow)}</p>
+      <p class="meta-row" title="${tool.freeScope}"><b>${t("labelFreeScope")}</b> ${oneLine(tool.freeScope)}</p>
       <div class="actions">
-        <a class="btn" href="${tool.link}" target="_blank" rel="noopener noreferrer" title="${tool.link}">🔗 사이트 이동</a>
+        <a class="btn" href="${tool.link}" target="_blank" rel="noopener noreferrer" title="${tool.link}">${t("btnVisit")}</a>
       </div>
     </article>
   `;
@@ -200,22 +311,40 @@ function comboTemplate(item) {
 }
 
 function renderCombos() {
-  popularCombosEl.innerHTML = popularCombos.map(comboTemplate).join("");
-  recommendedCombosEl.innerHTML = recommendedCombos.map(comboTemplate).join("");
+  const popularList = getLang() === "ko" ? popularCombos : popularCombosEn;
+  const recommendedList = getLang() === "ko" ? recommendedCombos : recommendedCombosEn;
+  popularCombosEl.innerHTML = popularList.map(comboTemplate).join("");
+  recommendedCombosEl.innerHTML = recommendedList.map(comboTemplate).join("");
 }
 
 function renderCards() {
   const list = filteredTools();
   if (list.length === 0) {
-    cardsEl.innerHTML = `<p class="note">검색 결과가 없습니다. 다른 키워드를 입력해 주세요.</p>`;
+    cardsEl.innerHTML = `<p class="note">${t("noResults")}</p>`;
     return;
   }
 
   cardsEl.innerHTML = list.map(cardTemplate).join("");
   cardsEl.insertAdjacentHTML(
     "beforeend",
-    `<p class="note">🟡 기준일 2026-03-05. 가격/무료 정책은 수시 변경되므로 결제 전 공식 링크에서 재확인하세요.</p>`
+    `<p class="note">${t("note")}</p>`
   );
+}
+
+function applyUiText() {
+  searchInput.placeholder = t("searchPlaceholder");
+  sortSelect.querySelector('option[value="default"]').textContent = t("sortDefault");
+  sortSelect.querySelector('option[value="free-first"]').textContent = t("sortFreeFirst");
+  sortSelect.querySelector('option[value="price-asc"]').textContent = t("sortPriceAsc");
+  sortSelect.querySelector('option[value="paid-subs-desc"]').textContent = t("sortPaidSubs");
+
+  const categoryTitle = document.querySelector(".toolbar h2");
+  const toolsTitle = document.querySelector(".content h2");
+  const contentTitles = document.querySelectorAll(".content h2");
+  if (categoryTitle) categoryTitle.textContent = t("categoryTitle");
+  if (toolsTitle) toolsTitle.textContent = t("toolsTitle");
+  if (contentTitles[1]) contentTitles[1].textContent = t("popularTitle");
+  if (contentTitles[2]) contentTitles[2].textContent = t("recommendedTitle");
 }
 
 function bindControls() {
@@ -231,6 +360,7 @@ function bindControls() {
 }
 
 function render() {
+  applyUiText();
   renderChips();
   renderCards();
   renderCombos();
@@ -245,6 +375,9 @@ async function init() {
     state.tools = await response.json();
     bindControls();
     render();
+    window.addEventListener("site-language-change", () => {
+      render();
+    });
   } catch (error) {
     cardsEl.innerHTML = `<p class="note">데이터 로드 실패: ${error.message}</p>`;
   }

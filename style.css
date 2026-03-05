@@ -54,6 +54,33 @@ body {
   border-color: var(--accent);
 }
 
+.locale-wrap {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #343434;
+  border-radius: 999px;
+  padding: 4px 8px;
+  background: #131313;
+}
+
+.locale-label {
+  font-size: 0.75rem;
+  color: #dadada;
+  white-space: nowrap;
+}
+
+.locale-select {
+  border: 1px solid #404040;
+  background: #1a1a1a;
+  color: #f0f0f0;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 0.74rem;
+  max-width: 210px;
+}
+
 .hero {
   margin-top: 14px;
   border: 1px solid var(--line);
@@ -394,5 +421,15 @@ h2 {
 
   .topnav {
     gap: 8px;
+  }
+
+  .locale-wrap {
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
+  }
+
+  .locale-select {
+    max-width: 60%;
   }
 }
