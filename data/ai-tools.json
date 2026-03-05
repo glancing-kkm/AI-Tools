@@ -2,7 +2,7 @@
   {
     "name": "ChatGPT",
     "category": "💬 대화형 AI",
-    "reason": "한국어 대화, 문서 요약, 멀티모달 활용이 균형적",
+    "reason": "범용성, 한국어 품질, 멀티모달 활용이 안정적",
     "features": ["질문응답", "파일분석", "이미지생성"],
     "pricing": { "display": "Free / Plus $20 / Pro $200", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "가입 후 Free 플랜 선택",
@@ -11,9 +11,20 @@
     "domain": "chatgpt.com"
   },
   {
+    "name": "Gemini",
+    "category": "💬 대화형 AI",
+    "reason": "구글 생태계 연동과 검색 기반 답변이 강점",
+    "features": ["질문응답", "문서요약", "멀티모달"],
+    "pricing": { "display": "Free / Google AI Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "Google 계정으로 무료 시작",
+    "freeScope": "기본 기능 무료, 고급 모델 제한",
+    "link": "https://gemini.google.com/",
+    "domain": "gemini.google.com"
+  },
+  {
     "name": "Claude",
     "category": "💬 대화형 AI",
-    "reason": "긴 문맥 처리와 문서 해석 정확도가 높음",
+    "reason": "긴 문서 처리와 자연스러운 글쓰기 품질이 우수",
     "features": ["긴문서요약", "코드설명", "리라이팅"],
     "pricing": { "display": "Free / Pro 약 $20", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "계정 생성 후 무료 사용",
@@ -22,9 +33,32 @@
     "domain": "claude.ai"
   },
   {
+    "name": "Microsoft Copilot",
+    "category": "💬 대화형 AI",
+    "reason": "Windows/Office 연동이 쉬워 업무 활용성이 높음",
+    "features": ["질문응답", "웹검색", "오피스연동"],
+    "pricing": { "display": "Free / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "Microsoft 계정으로 접속",
+    "freeScope": "기본 대화 기능 무료",
+    "link": "https://copilot.microsoft.com/",
+    "domain": "copilot.microsoft.com"
+  },
+  {
+    "name": "Meta AI",
+    "category": "💬 대화형 AI",
+    "reason": "Meta 앱 생태계 중심으로 빠르게 확산 중",
+    "features": ["질문응답", "이미지생성", "앱내보조"],
+    "pricing": { "display": "Free", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "Meta 계정/앱에서 사용",
+    "freeScope": "지원 지역 내 기본 기능 제공",
+    "link": "https://www.meta.ai/",
+    "domain": "meta.ai"
+  },
+
+  {
     "name": "Perplexity",
     "category": "🔎 지식검색/사실검증",
-    "reason": "답변과 출처 링크를 함께 제공해 검증이 빠름",
+    "reason": "출처 링크 기반 답변으로 사실 확인이 빠름",
     "features": ["실시간웹검색", "출처인용", "리서치모드"],
     "pricing": { "display": "Free / Pro $20", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "회원가입 후 무료 사용",
@@ -35,7 +69,7 @@
   {
     "name": "Consensus",
     "category": "🔎 지식검색/사실검증",
-    "reason": "논문 중심 검색으로 연구 근거 확인에 유리",
+    "reason": "논문 근거를 중심으로 요약해 리서치에 적합",
     "features": ["논문검색", "근거요약", "연구질의"],
     "pricing": { "display": "Free / Premium(변동)", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "무료 계정으로 시작",
@@ -44,9 +78,43 @@
     "domain": "consensus.app"
   },
   {
+    "name": "Elicit",
+    "category": "🔎 지식검색/사실검증",
+    "reason": "연구 질문 기반 논문 수집/정리에 효율적",
+    "features": ["논문탐색", "근거정리", "질문요약"],
+    "pricing": { "display": "Free / Plus(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "가입 후 Free 플랜 사용",
+    "freeScope": "기본 검색/요약 쿼리 제공",
+    "link": "https://elicit.com/",
+    "domain": "elicit.com"
+  },
+  {
+    "name": "You.com",
+    "category": "🔎 지식검색/사실검증",
+    "reason": "검색과 챗을 결합한 하이브리드 사용성 제공",
+    "features": ["AI검색", "요약", "멀티모델"],
+    "pricing": { "display": "Free / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "웹에서 무료 시작",
+    "freeScope": "기본 검색 기능 무료",
+    "link": "https://you.com/",
+    "domain": "you.com"
+  },
+  {
+    "name": "Wolfram|Alpha",
+    "category": "🔎 지식검색/사실검증",
+    "reason": "수학/과학 계산 검증에 특화된 신뢰도 높은 엔진",
+    "features": ["계산검증", "단계풀이", "데이터질의"],
+    "pricing": { "display": "Free / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "웹 무료 버전 접속",
+    "freeScope": "기본 계산/질의 무료",
+    "link": "https://www.wolframalpha.com/",
+    "domain": "wolframalpha.com"
+  },
+
+  {
     "name": "Midjourney",
     "category": "🖼️ 이미지생성",
-    "reason": "스타일 완성도와 아트 품질이 안정적",
+    "reason": "아트 스타일 품질과 완성도가 높음",
     "features": ["텍스트이미지", "스타일제어", "업스케일"],
     "pricing": { "display": "Basic $10부터", "monthlyUsdFrom": 10, "hasFree": false },
     "freeHow": "유료 플랜 가입 후 사용",
@@ -55,9 +123,31 @@
     "domain": "midjourney.com"
   },
   {
+    "name": "DALL·E",
+    "category": "🖼️ 이미지생성",
+    "reason": "ChatGPT와 연결해 프롬프트 수정이 쉬움",
+    "features": ["이미지생성", "이미지수정", "변형생성"],
+    "pricing": { "display": "ChatGPT 플랜 기반", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "ChatGPT Free/유료에서 사용",
+    "freeScope": "플랜별 생성 한도 적용",
+    "link": "https://chatgpt.com/",
+    "domain": "chatgpt.com"
+  },
+  {
+    "name": "Adobe Firefly",
+    "category": "🖼️ 이미지생성",
+    "reason": "상업 디자인 워크플로와 Adobe 도구 연동에 강함",
+    "features": ["텍스트이미지", "생성형채우기", "상업워크플로"],
+    "pricing": { "display": "Free 크레딧 / Paid(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "Adobe 계정으로 무료 크레딧 사용",
+    "freeScope": "월 무료 크레딧 범위 제공",
+    "link": "https://firefly.adobe.com/",
+    "domain": "firefly.adobe.com"
+  },
+  {
     "name": "Leonardo AI",
     "category": "🖼️ 이미지생성",
-    "reason": "게임/브랜딩 시안 제작에 강한 템플릿 제공",
+    "reason": "게임/브랜딩 에셋 제작 템플릿이 풍부",
     "features": ["이미지생성", "에셋생성", "스타일학습"],
     "pricing": { "display": "Free / Paid(변동)", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "가입 후 무료 토큰 사용",
@@ -66,20 +156,32 @@
     "domain": "leonardo.ai"
   },
   {
+    "name": "DreamStudio",
+    "category": "🖼️ 이미지생성",
+    "reason": "Stable Diffusion 기반으로 커스텀 제어가 쉬움",
+    "features": ["SD생성", "프롬프트제어", "이미지변형"],
+    "pricing": { "display": "크레딧 결제형", "monthlyUsdFrom": 1, "hasFree": true },
+    "freeHow": "가입 후 초기 크레딧 사용",
+    "freeScope": "무료 크레딧 소진 전 사용",
+    "link": "https://dreamstudio.ai/",
+    "domain": "dreamstudio.ai"
+  },
+
+  {
     "name": "Suno",
     "category": "🎵 음악생성/사운드생성",
-    "reason": "가사 입력만으로 보컬 포함 완성곡 생성",
+    "reason": "가사만으로 보컬 포함 곡을 빠르게 생성",
     "features": ["가사기반작곡", "보컬생성", "장르제어"],
     "pricing": { "display": "Free / Pro $10 / Premier $30", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "가입 후 무료 크레딧 사용",
-    "freeScope": "일일 크레딧 내 생성 가능",
+    "freeScope": "일일 크레딧 범위 내 생성",
     "link": "https://suno.com/",
     "domain": "suno.com"
   },
   {
     "name": "Udio",
     "category": "🎵 음악생성/사운드생성",
-    "reason": "프롬프트 기반 곡 생성과 편집 흐름이 간단",
+    "reason": "짧은 프롬프트로 곡 생성과 확장 편집이 쉬움",
     "features": ["텍스트작곡", "확장편집", "보컬트랙"],
     "pricing": { "display": "Free / Standard(변동)", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "무료 계정으로 시작",
@@ -87,6 +189,40 @@
     "link": "https://www.udio.com/",
     "domain": "udio.com"
   },
+  {
+    "name": "Stable Audio",
+    "category": "🎵 음악생성/사운드생성",
+    "reason": "배경음/효과음 생성과 라이선스 관리가 편함",
+    "features": ["배경음생성", "효과음생성", "길이제어"],
+    "pricing": { "display": "Free / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "가입 후 무료 사용",
+    "freeScope": "기본 생성 횟수 제공",
+    "link": "https://www.stableaudio.com/",
+    "domain": "stableaudio.com"
+  },
+  {
+    "name": "AIVA",
+    "category": "🎵 음악생성/사운드생성",
+    "reason": "영상/게임용 배경음악 제작에 특화",
+    "features": ["BGM작곡", "스타일선택", "MIDI내보내기"],
+    "pricing": { "display": "Free / Standard €15", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "무료 플랜으로 시작",
+    "freeScope": "다운로드/사용 조건 제한",
+    "link": "https://www.aiva.ai/",
+    "domain": "aiva.ai"
+  },
+  {
+    "name": "Soundraw",
+    "category": "🎵 음악생성/사운드생성",
+    "reason": "영상 길이에 맞춘 음악 편집이 간단",
+    "features": ["자동작곡", "길이편집", "장르선택"],
+    "pricing": { "display": "Trial / Creator(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "체험 후 플랜 선택",
+    "freeScope": "체험 범위 내 생성",
+    "link": "https://soundraw.io/",
+    "domain": "soundraw.io"
+  },
+
   {
     "name": "ElevenLabs",
     "category": "🎙️ 음성/보컬",
@@ -101,7 +237,7 @@
   {
     "name": "PlayHT",
     "category": "🎙️ 음성/보컬",
-    "reason": "API 기반 음성 합성/배포에 적합",
+    "reason": "API 기반 음성 서비스 구축에 유리",
     "features": ["TTS", "음성API", "다국어지원"],
     "pricing": { "display": "Free Trial / Paid(변동)", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "체험 계정으로 시작",
@@ -110,9 +246,43 @@
     "domain": "play.ht"
   },
   {
+    "name": "Murf",
+    "category": "🎙️ 음성/보컬",
+    "reason": "프레젠테이션/교육용 보이스오버 제작이 쉬움",
+    "features": ["보이스오버", "TTS", "오디오편집"],
+    "pricing": { "display": "Free / Creator(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "무료 체험으로 시작",
+    "freeScope": "체험 프로젝트 한도 제공",
+    "link": "https://murf.ai/",
+    "domain": "murf.ai"
+  },
+  {
+    "name": "LOVO",
+    "category": "🎙️ 음성/보컬",
+    "reason": "다양한 음색 라이브러리와 스튜디오 편집 제공",
+    "features": ["TTS", "보이스라이브러리", "비디오더빙"],
+    "pricing": { "display": "Free / Basic(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "무료 플랜으로 시작",
+    "freeScope": "기본 음성 생성 제공",
+    "link": "https://lovo.ai/",
+    "domain": "lovo.ai"
+  },
+  {
+    "name": "Speechify Studio",
+    "category": "🎙️ 음성/보컬",
+    "reason": "문서/웹 콘텐츠 낭독과 보이스 변환이 강점",
+    "features": ["문서낭독", "TTS", "오디오변환"],
+    "pricing": { "display": "Free / Premium(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "웹/앱 무료 시작",
+    "freeScope": "기본 낭독 기능 무료",
+    "link": "https://speechify.com/",
+    "domain": "speechify.com"
+  },
+
+  {
     "name": "GitHub Copilot",
     "category": "💻 코딩/개발",
-    "reason": "IDE 통합 자동완성으로 개발 속도 향상",
+    "reason": "IDE 통합 자동완성으로 생산성 향상",
     "features": ["코드완성", "코드채팅", "테스트초안"],
     "pricing": { "display": "Free / Pro $10 / Biz $19", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "Copilot Free 활성화",
@@ -123,7 +293,7 @@
   {
     "name": "Cursor",
     "category": "💻 코딩/개발",
-    "reason": "AI 코드 에디터로 리팩터링/탐색이 빠름",
+    "reason": "코드베이스 탐색/리팩터링 속도가 빠름",
     "features": ["AI코딩", "코드베이스질의", "리팩터링"],
     "pricing": { "display": "Hobby / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "설치 후 무료 티어 사용",
@@ -131,6 +301,40 @@
     "link": "https://www.cursor.com/",
     "domain": "cursor.com"
   },
+  {
+    "name": "Windsurf",
+    "category": "💻 코딩/개발",
+    "reason": "에이전트형 코딩 워크플로로 반복 작업 자동화",
+    "features": ["AI에이전트", "코드생성", "자동수정"],
+    "pricing": { "display": "Free / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "설치 후 무료 시작",
+    "freeScope": "무료 쿼리 한도 제공",
+    "link": "https://windsurf.com/",
+    "domain": "windsurf.com"
+  },
+  {
+    "name": "Amazon Q Developer",
+    "category": "💻 코딩/개발",
+    "reason": "AWS 환경 개발/운영 자동화에 유리",
+    "features": ["코드제안", "AWS질의", "보안점검"],
+    "pricing": { "display": "Free Tier / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "AWS 계정으로 시작",
+    "freeScope": "무료 티어 범위 제공",
+    "link": "https://aws.amazon.com/q/developer/",
+    "domain": "aws.amazon.com"
+  },
+  {
+    "name": "Tabnine",
+    "category": "💻 코딩/개발",
+    "reason": "기업용 프라이버시 옵션과 코드 완성이 강점",
+    "features": ["코드완성", "프라이빗모드", "IDE연동"],
+    "pricing": { "display": "Basic Free / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "무료 플랜으로 시작",
+    "freeScope": "기본 자동완성 제공",
+    "link": "https://www.tabnine.com/",
+    "domain": "tabnine.com"
+  },
+
   {
     "name": "Zapier",
     "category": "📊 데이터분석/자동화",
@@ -145,7 +349,7 @@
   {
     "name": "Make",
     "category": "📊 데이터분석/자동화",
-    "reason": "시각적 시나리오 편집으로 복잡 자동화 구현에 강함",
+    "reason": "복잡한 자동화를 시각적 시나리오로 구성 가능",
     "features": ["시나리오빌더", "앱연동", "데이터변환"],
     "pricing": { "display": "Free / Core €10.59부터", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "무료 계정 생성",
@@ -154,9 +358,43 @@
     "domain": "make.com"
   },
   {
+    "name": "n8n",
+    "category": "📊 데이터분석/자동화",
+    "reason": "오픈소스 기반으로 유연한 자동화 구축 가능",
+    "features": ["워크플로자동화", "노드연결", "셀프호스팅"],
+    "pricing": { "display": "Self-host Free / Cloud Paid", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "셀프호스팅 또는 체험 시작",
+    "freeScope": "오픈소스 버전 무료 사용",
+    "link": "https://n8n.io/",
+    "domain": "n8n.io"
+  },
+  {
+    "name": "Power Automate",
+    "category": "📊 데이터분석/자동화",
+    "reason": "Microsoft 365/Teams 자동화 연동에 강함",
+    "features": ["업무자동화", "RPA", "MS연동"],
+    "pricing": { "display": "Trial / Paid(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "체험 플랜 시작",
+    "freeScope": "트라이얼 기간 제공",
+    "link": "https://www.microsoft.com/en-us/power-platform/products/power-automate",
+    "domain": "microsoft.com"
+  },
+  {
+    "name": "Airtable AI",
+    "category": "📊 데이터분석/자동화",
+    "reason": "데이터베이스 + 자동화 + AI를 함께 운영 가능",
+    "features": ["DB자동화", "요약", "분류"],
+    "pricing": { "display": "Free / Team(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "무료 워크스페이스 생성",
+    "freeScope": "기본 레코드/자동화 한도 제공",
+    "link": "https://www.airtable.com/",
+    "domain": "airtable.com"
+  },
+
+  {
     "name": "Runway",
     "category": "🎬 비디오생성/편집",
-    "reason": "텍스트 기반 생성과 편집 기능을 한곳에 제공",
+    "reason": "텍스트 생성과 AI 편집 도구를 통합 제공",
     "features": ["텍스트비디오", "AI편집", "인페인팅"],
     "pricing": { "display": "Basic Free / Standard $15", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "Basic 플랜으로 시작",
@@ -167,7 +405,7 @@
   {
     "name": "Pika",
     "category": "🎬 비디오생성/편집",
-    "reason": "짧은 생성형 영상 제작이 빠르고 쉬움",
+    "reason": "짧은 생성형 영상 제작이 빠르고 간단",
     "features": ["텍스트비디오", "스타일변환", "짧은클립"],
     "pricing": { "display": "Free / Paid(변동)", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "가입 후 무료 크레딧 사용",
@@ -176,9 +414,43 @@
     "domain": "pika.art"
   },
   {
+    "name": "Kling AI",
+    "category": "🎬 비디오생성/편집",
+    "reason": "고품질 텍스트-투-비디오로 빠르게 주목받는 도구",
+    "features": ["텍스트비디오", "이미지비디오", "모션제어"],
+    "pricing": { "display": "Free / Paid(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "가입 후 무료 체험",
+    "freeScope": "무료 크레딧 범위 사용",
+    "link": "https://klingai.com/",
+    "domain": "klingai.com"
+  },
+  {
+    "name": "Synthesia",
+    "category": "🎬 비디오생성/편집",
+    "reason": "아바타 기반 설명 영상 제작에 최적화",
+    "features": ["아바타영상", "스크립트기반", "다국어더빙"],
+    "pricing": { "display": "Paid 플랜 중심", "monthlyUsdFrom": 18, "hasFree": false },
+    "freeHow": "데모/체험 후 플랜 선택",
+    "freeScope": "무료 정식 플랜 제한적",
+    "link": "https://www.synthesia.io/",
+    "domain": "synthesia.io"
+  },
+  {
+    "name": "HeyGen",
+    "category": "🎬 비디오생성/편집",
+    "reason": "마케팅/교육용 아바타 영상 생성이 빠름",
+    "features": ["아바타생성", "더빙", "스크립트영상"],
+    "pricing": { "display": "Free Trial / Creator(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "체험 계정 생성",
+    "freeScope": "트라이얼 크레딧 제공",
+    "link": "https://www.heygen.com/",
+    "domain": "heygen.com"
+  },
+
+  {
     "name": "Notion AI",
     "category": "📝 문서작성/편집",
-    "reason": "문서/DB 작업 흐름에서 바로 AI 활용 가능",
+    "reason": "문서/DB 작업 흐름에서 바로 AI 사용 가능",
     "features": ["문서초안", "요약", "회의록정리"],
     "pricing": { "display": "요금제+AI 애드온(변동)", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "무료 워크스페이스로 시작",
@@ -189,7 +461,7 @@
   {
     "name": "Grammarly",
     "category": "📝 문서작성/편집",
-    "reason": "영문 글쓰기 교정과 톤 조정에 강함",
+    "reason": "영문 문장 교정과 톤 개선 품질이 높음",
     "features": ["문장교정", "톤제안", "리라이트"],
     "pricing": { "display": "Free / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "브라우저 확장 설치",
@@ -198,9 +470,54 @@
     "domain": "grammarly.com"
   },
   {
+    "name": "Jasper",
+    "category": "📝 문서작성/편집",
+    "reason": "마케팅 카피/브랜드 톤 유지에 최적화",
+    "features": ["카피작성", "브랜드톤", "캠페인문안"],
+    "pricing": { "display": "Paid 플랜 중심", "monthlyUsdFrom": 39, "hasFree": false },
+    "freeHow": "체험 신청 후 사용",
+    "freeScope": "정식 무료 플랜 제한적",
+    "link": "https://www.jasper.ai/",
+    "domain": "jasper.ai"
+  },
+  {
+    "name": "QuillBot",
+    "category": "📝 문서작성/편집",
+    "reason": "패러프레이즈/요약 등 학습·작성 보조에 유용",
+    "features": ["패러프레이즈", "요약", "문법체크"],
+    "pricing": { "display": "Free / Premium(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "웹에서 무료 사용",
+    "freeScope": "모드/글자수 제한 내 사용",
+    "link": "https://quillbot.com/",
+    "domain": "quillbot.com"
+  },
+  {
+    "name": "Writer",
+    "category": "📝 문서작성/편집",
+    "reason": "기업용 문서 거버넌스와 팀 협업에 적합",
+    "features": ["문서생성", "브랜드가이드", "팀협업"],
+    "pricing": { "display": "Trial / Enterprise 중심", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "체험 신청",
+    "freeScope": "체험 범위 내 기능 사용",
+    "link": "https://writer.com/",
+    "domain": "writer.com"
+  },
+
+  {
+    "name": "Canva AI",
+    "category": "🧩 추가: 프레젠테이션/디자인",
+    "reason": "템플릿과 AI 생성 도구를 함께 제공",
+    "features": ["디자인생성", "프레젠테이션", "이미지편집"],
+    "pricing": { "display": "Free / Pro 약 $14.99", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "무료 플랜 가입",
+    "freeScope": "기본 템플릿/AI 일부 제공",
+    "link": "https://www.canva.com/",
+    "domain": "canva.com"
+  },
+  {
     "name": "Gamma",
     "category": "🧩 추가: 프레젠테이션/디자인",
-    "reason": "텍스트 입력만으로 발표자료 초안을 빠르게 생성",
+    "reason": "텍스트 입력만으로 발표자료 초안 생성",
     "features": ["PPT생성", "웹문서생성", "디자인자동화"],
     "pricing": { "display": "Free / Plus(변동)", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "무료 계정으로 시작",
@@ -209,16 +526,39 @@
     "domain": "gamma.app"
   },
   {
-    "name": "Canva AI",
+    "name": "Tome",
     "category": "🧩 추가: 프레젠테이션/디자인",
-    "reason": "디자인 템플릿과 AI 생성 도구를 함께 제공",
-    "features": ["디자인생성", "프레젠테이션", "이미지편집"],
-    "pricing": { "display": "Free / Pro 약 $14.99", "monthlyUsdFrom": 0, "hasFree": true },
-    "freeHow": "무료 플랜 가입",
-    "freeScope": "기본 템플릿/AI 일부 제공",
-    "link": "https://www.canva.com/",
-    "domain": "canva.com"
+    "reason": "스토리 중심 슬라이드 작성에 강함",
+    "features": ["스토리슬라이드", "AI레이아웃", "공유발표"],
+    "pricing": { "display": "Free / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "가입 후 무료 시작",
+    "freeScope": "기본 페이지/생성 한도 제공",
+    "link": "https://tome.app/",
+    "domain": "tome.app"
   },
+  {
+    "name": "Beautiful.ai",
+    "category": "🧩 추가: 프레젠테이션/디자인",
+    "reason": "자동 레이아웃으로 디자인 품질 유지가 쉬움",
+    "features": ["자동레이아웃", "프레젠테이션", "팀템플릿"],
+    "pricing": { "display": "Trial / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "체험 플랜 시작",
+    "freeScope": "트라이얼 기간 사용",
+    "link": "https://www.beautiful.ai/",
+    "domain": "beautiful.ai"
+  },
+  {
+    "name": "Figma AI",
+    "category": "🧩 추가: 프레젠테이션/디자인",
+    "reason": "UI 디자인 초안과 카피 생성에 강점",
+    "features": ["UI생성", "카피제안", "프로토타입"],
+    "pricing": { "display": "Figma 플랜 기반", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "Figma 무료 플랜에서 시작",
+    "freeScope": "플랜별 AI 기능 한도 적용",
+    "link": "https://www.figma.com/ai/",
+    "domain": "figma.com"
+  },
+
   {
     "name": "Otter",
     "category": "🗣️ 추가: 회의록/전사",
@@ -233,7 +573,7 @@
   {
     "name": "Fireflies",
     "category": "🗣️ 추가: 회의록/전사",
-    "reason": "회의 앱 연동 자동 녹취/검색이 편함",
+    "reason": "회의 앱 연동 자동 녹취/검색이 편리",
     "features": ["자동녹취", "요약", "대화검색"],
     "pricing": { "display": "Free / Pro $10부터", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "무료 가입 후 회의 연동",
@@ -241,6 +581,40 @@
     "link": "https://fireflies.ai/",
     "domain": "fireflies.ai"
   },
+  {
+    "name": "Fathom",
+    "category": "🗣️ 추가: 회의록/전사",
+    "reason": "줌 회의 요약과 하이라이트 추출이 강점",
+    "features": ["회의요약", "하이라이트", "CRM연동"],
+    "pricing": { "display": "Free / Team(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "무료 계정으로 시작",
+    "freeScope": "개인 무료 플랜 제공",
+    "link": "https://fathom.video/",
+    "domain": "fathom.video"
+  },
+  {
+    "name": "tl;dv",
+    "category": "🗣️ 추가: 회의록/전사",
+    "reason": "회의 영상 타임스탬프와 요약 공유가 쉬움",
+    "features": ["회의녹화", "타임스탬프", "요약공유"],
+    "pricing": { "display": "Free / Pro(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "무료 가입 후 사용",
+    "freeScope": "기본 녹화/요약 기능 제공",
+    "link": "https://tldv.io/",
+    "domain": "tldv.io"
+  },
+  {
+    "name": "Avoma",
+    "category": "🗣️ 추가: 회의록/전사",
+    "reason": "세일즈/CS 회의 분석과 인사이트 제공",
+    "features": ["회의전사", "인사이트", "콜분석"],
+    "pricing": { "display": "Trial / Paid(변동)", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "체험 계정 신청",
+    "freeScope": "트라이얼 기능 제공",
+    "link": "https://www.avoma.com/",
+    "domain": "avoma.com"
+  },
+
   {
     "name": "DeepL",
     "category": "🌐 추가: 번역/다국어",
@@ -253,14 +627,47 @@
     "domain": "deepl.com"
   },
   {
+    "name": "Google Translate",
+    "category": "🌐 추가: 번역/다국어",
+    "reason": "접근성이 높고 다국어 지원 범위가 넓음",
+    "features": ["텍스트번역", "이미지번역", "음성번역"],
+    "pricing": { "display": "웹/앱 무료", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "웹/앱에서 즉시 사용",
+    "freeScope": "일반 번역 무료 제공",
+    "link": "https://translate.google.com/",
+    "domain": "translate.google.com"
+  },
+  {
+    "name": "Papago",
+    "category": "🌐 추가: 번역/다국어",
+    "reason": "한-영/한-일 등 동아시아 언어 번역에 강점",
+    "features": ["텍스트번역", "이미지번역", "문맥번역"],
+    "pricing": { "display": "웹/앱 무료", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "네이버 계정 없이 사용 가능",
+    "freeScope": "기본 번역 기능 무료",
+    "link": "https://papago.naver.com/",
+    "domain": "papago.naver.com"
+  },
+  {
     "name": "Lokalise AI",
     "category": "🌐 추가: 번역/다국어",
-    "reason": "제품 현지화 워크플로와 협업 관리에 강함",
+    "reason": "제품 현지화 워크플로와 팀 협업에 적합",
     "features": ["앱현지화", "번역관리", "QA협업"],
     "pricing": { "display": "Trial / Paid(변동)", "monthlyUsdFrom": 0, "hasFree": true },
     "freeHow": "트라이얼 계정 신청",
     "freeScope": "체험 기간 기능 사용",
     "link": "https://lokalise.com/",
     "domain": "lokalise.com"
+  },
+  {
+    "name": "Smartcat",
+    "category": "🌐 추가: 번역/다국어",
+    "reason": "번역 자동화와 인력 협업을 함께 지원",
+    "features": ["번역자동화", "TM관리", "협업"],
+    "pricing": { "display": "Free Trial / Paid", "monthlyUsdFrom": 0, "hasFree": true },
+    "freeHow": "체험 계정으로 시작",
+    "freeScope": "트라이얼 기능 제공",
+    "link": "https://www.smartcat.com/",
+    "domain": "smartcat.com"
   }
 ]

@@ -241,6 +241,38 @@ h2 {
   gap: 8px;
 }
 
+.combo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+.combo-card {
+  border: 1px solid #343434;
+  border-radius: 12px;
+  background: #121212;
+  padding: 10px;
+}
+
+.combo-name {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.combo-why {
+  margin: 6px 0 0;
+  color: #d7d7d7;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .policy-box {
   margin-top: 18px;
   border: 1px solid var(--line);
@@ -353,6 +385,10 @@ h2 {
   }
 
   .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .combo-list {
     grid-template-columns: 1fr;
   }
 
