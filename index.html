@@ -1,14 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>AI 카테고리 추천 아카이브</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">🧠 AI TOOL CURATION</p>
+      <h1>AI 카테고리별 추천 사이트 모음</h1>
+      <p class="subtitle">
+        핵심 AI를 카테고리별로 비교 정리했고 <span class="highlight">중요 정보는 노란색</span>으로 표시했습니다.
+      </p>
+      <p class="meta">📌 기준일: 2026-03-05 (UTC) · 가격/정책은 수시 변경 가능</p>
+    </header>
+
+    <section class="toolbar">
+      <h2>🗂️ 카테고리</h2>
+      <div id="categoryChips" class="chips"></div>
+      <div class="controls">
+        <input id="searchInput" class="control-input" type="text" placeholder="🔎 AI 이름/기능 검색" />
+        <select id="sortSelect" class="control-select">
+          <option value="default">기본 정렬</option>
+          <option value="free-first">무료 우선</option>
+          <option value="price-asc">가격 낮은 순</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>✨ 추천 AI</h2>
+      <div id="cards" class="cards"></div>
+    </section>
+  </main>
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>
