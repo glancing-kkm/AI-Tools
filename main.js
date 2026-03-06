@@ -78,20 +78,19 @@ const categoryText = {
   "🎬 비디오생성/편집": "🎬 Video Generation/Editing",
   "📝 문서작성/편집": "📝 Writing/Editing",
   "🧩 추가: 프레젠테이션/디자인": "🧩 Extra: Presentation/Design",
-  "🗣️ 추가: 회의록/전사": "🗣️ Extra: Meeting Notes/Transcription",
-  "🌐 추가: 번역/다국어": "🌐 Extra: Translation/Multilingual"
+  "🗣️ 추가: 회의록/전사": "🗣️ Extra: Meeting Notes/Transcription"
 };
 
 const popularCombosEn = [
   { name: "ChatGPT + Perplexity + Notion AI", why: "Use one flow for drafting, fact-checking, and organizing docs." },
-  { name: "Gemini + Perplexity + DeepL", why: "Combine search quality, source checks, and translation." },
+  { name: "Gemini + Perplexity + Claude", why: "Combine fast research, source checks, and long-form drafting." },
   { name: "GitHub Copilot + ChatGPT + Cursor", why: "Split code completion, debugging, and codebase Q&A." },
   { name: "Midjourney + Runway + ElevenLabs", why: "Connect image, video, and voice for faster content production." },
   { name: "Suno + Canva AI + Runway", why: "Produce music, thumbnails, and short videos quickly." }
 ];
 
 const recommendedCombosEn = [
-  { name: "Beginner: ChatGPT + Canva AI + DeepL", why: "Easy combo for planning, design, and translation." },
+  { name: "Beginner: ChatGPT + Canva AI + Notion AI", why: "Easy combo for planning, design, and organized notes." },
   { name: "Student/Research: Gemini + Consensus + Notion AI", why: "Efficient for search, evidence checks, and note organization." },
   { name: "Solo marketer: Perplexity + Notion AI + Runway", why: "Covers research, content planning, and video production." },
   { name: "Developer: GitHub Copilot + Claude + Zapier", why: "Balanced setup for coding, docs, and automation." },
@@ -124,9 +123,6 @@ const paidSignals = {
   LOVO: { score: 61, label: "중간" },
   Otter: { score: 60, label: "중간" },
   Fireflies: { score: 58, label: "중간" },
-  DeepL: { score: 57, label: "중간" },
-  "Google Translate": { score: 56, label: "중간" },
-  Papago: { score: 55, label: "중간" },
   "Leonardo AI": { score: 54, label: "중간" },
   Suno: { score: 52, label: "중간" },
   "Amazon Q Developer": { score: 51, label: "중간" },
@@ -144,8 +140,6 @@ const paidSignals = {
   "Stable Audio": { score: 35, label: "낮음" },
   AIVA: { score: 35, label: "낮음" },
   Soundraw: { score: 34, label: "낮음" },
-  "Lokalise AI": { score: 34, label: "낮음" },
-  Smartcat: { score: 33, label: "낮음" },
   Gamma: { score: 33, label: "낮음" },
   Cursor: { score: 32, label: "낮음" },
   Tome: { score: 31, label: "낮음" },
@@ -163,14 +157,14 @@ const paidSignals = {
 
 const popularCombos = [
   { name: "ChatGPT + Perplexity + Notion AI", why: "초안 작성, 사실 검증, 문서 정리를 한 흐름으로 처리" },
-  { name: "Gemini + Perplexity + DeepL", why: "검색 보강, 근거 확인, 번역까지 빠르게 연결" },
+  { name: "Gemini + Perplexity + Claude", why: "검색 보강, 근거 확인, 장문 정리를 빠르게 연결" },
   { name: "GitHub Copilot + ChatGPT + Cursor", why: "코딩 자동완성, 디버깅, 코드베이스 탐색을 분업" },
   { name: "Midjourney + Runway + ElevenLabs", why: "이미지/영상/보이스를 연결해 콘텐츠 제작 속도 향상" },
   { name: "Suno + Canva AI + Runway", why: "음원, 썸네일, 숏폼 영상을 빠르게 묶어 발행" }
 ];
 
 const recommendedCombos = [
-  { name: "입문자: ChatGPT + Canva AI + DeepL", why: "기획, 디자인, 번역까지 쉬운 조합으로 시작 가능" },
+  { name: "입문자: ChatGPT + Canva AI + Notion AI", why: "기획, 디자인, 노트 정리까지 쉬운 조합으로 시작 가능" },
   { name: "학생/연구: Gemini + Consensus + Notion AI", why: "자료 탐색, 근거 확인, 노트 정리를 한 번에 처리" },
   { name: "1인 마케터: Perplexity + Notion AI + Runway", why: "리서치, 콘텐츠 캘린더, 영상 제작까지 한 번에 구성" },
   { name: "개발자: GitHub Copilot + Claude + Zapier", why: "코딩 생산성 + 문서화 + 운영 자동화가 균형적" },
@@ -182,7 +176,7 @@ function faviconUrl(domain) {
 }
 
 function getLang() {
-  return window.__siteLang === "ko" ? "ko" : "en";
+  return window.__siteLang === "en" ? "en" : "ko";
 }
 
 function t(key) {
@@ -199,9 +193,8 @@ function scoreLabel(rawLabel) {
 }
 
 function categoryLabel(value) {
-  if (value === "전체") return t("all");
-  if (getLang() === "ko") return value;
-  return categoryText[value] || value;
+  if (value === "전체") return "전체";
+  return value;
 }
 
 function categories() {
@@ -375,9 +368,6 @@ async function init() {
     state.tools = await response.json();
     bindControls();
     render();
-    window.addEventListener("site-language-change", () => {
-      render();
-    });
   } catch (error) {
     cardsEl.innerHTML = `<p class="note">데이터 로드 실패: ${error.message}</p>`;
   }
